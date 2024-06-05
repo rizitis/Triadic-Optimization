@@ -1,0 +1,60 @@
+Απόδειξη της θεωρείας: 
+1. Εκτελούμε το createnums.py. Αυτό θα δημιουργήσει ένα αρχείο  numbers.txt στον τρέχοντα κατάλογο με 1δις γραμμές η κάθε γραμμή θα έχει έναν αριθμό από το 1-1.000.000.000
+2. Στην συνέχεια εκτελούμε το teliko_nums.py ή το teliko_nums2.py όποιο και να τρέξουμε αυτό που θα κάνει είναι
+α) θα ανακατεψει εντελώς τυχαία τις γραμμες στο numbers.txt 
+β) θα τις μετρήσει (εμείς ξέρουμε πόσες είναι 1δις)
+γ) εντελώς τυχαία πάλι θα μοιράσει τις γραμμές σε 3 μέρη
+δ) τωρα θα προθέσει των αριθμό που περιέχει η κάθε γραμμή και θα τον διαιρέσει με τον αριθμό τον γραμμών ώστε να βγει ό μέσως όρος.
+
+Το αποτέλεσμα θα είναι με μικρές αποκλίσεις έτσι:
+python3 teliko_nums.py 
+Ο μέσος όρος του πρώτου τμήματος είναι: 499985344.58548886
+Ο μέσος όρος του δεύτερου τμήματος είναι: 499997023.58038485
+Ο μέσος όρος του τρίτου τμήματος είναι: 500017633.33407336
+
+ή
+
+python3 teliko_nums2.py 
+Ο μέσος όρος του πρώτου τμήματος είναι: 499981295.966643
+Ο μέσος όρος του δεύτερου τμήματος είναι: 500010723.68831867
+Ο μέσος όρος του τρίτου τμήματος είναι: 500007981.8450144
+
+
+Η ουσία δηλαδή είναι ότι σε τέτοιες κλίμακες η τυχαιότητα σχεδόν εξασφαλίζει τον μέσω όρο. 
+Αυτό γιατί μας ενδιαφέρει; 
+
+Διότι όταν έχεις σωστό μέσω όρο , σημαίνει ότι έχει αντιπροσωπευτικό δείγμα από την dataset. 
+Στην προκειμένη περίπτωση η  dataset είναι 1δις σειρές και αριθμοί , φαντάσου το όμως αλλιώς.
+Ότι η dataset ήταν ένας φάκελος που είχε μέσα 1δισ αρχεία κειμένου, ή φωτογραφίες, ή ότι άλλο αρχείο θέλεις ή και όλα μαζί ανακατεμένα... 
+
+Με αυτήν την λογική μπορείς να εκπαδεύσεις ένα μοντέλο χρησιμοποιώντας μόνο το 1/3 της dataset για train και το 10% για test και val.
+Το πως θα διαλέξεις το 10% θα το πούμε αλλου...
+
+Proof of Theory:
+
+1.    We first execute the createnums.py script. This script generates a file named numbers.txt in the current directory, containing one billion lines. Each line consists of a number ranging from 1 to 1,000,000,000.
+2.    Next, we run either teliko_nums.py or teliko_nums2.py. These scripts perform the following steps:
+    a) Randomly shuffle the lines in the numbers.txt file.
+    b) Count the total number of lines (which we know to be one billion).
+    c) Randomly divide the lines into three segments.
+    d) Calculate the mean of the numbers contained in each line within each segment by summing them up and dividing by the number of lines.
+
+The resulting means will have slight variations, as demonstrated below:
+
+python3 teliko_nums.py
+The mean of the first segment is: 499985344.58548886
+The mean of the second segment is: 499997023.58038485
+The mean of the third segment is: 500017633.33407336
+
+or
+
+python3 teliko_nums2.py
+The mean of the first segment is: 499981295.966643
+The mean of the second segment is: 500010723.68831867
+The mean of the third segment is: 500007981.8450144
+
+
+he key point here is that at such large scales, randomness effectively ensures the accuracy of the mean. Why does this matter?
+Because having a proper mean implies having a representative sample from the dataset. In this context, the dataset comprises one billion lines and numbers. Imagine if the dataset were instead a folder containing one billion text files, images, or any other file type, or even a combination of various file types shuffled together.
+
+Following this logic, you can train a model using only one-third of the dataset for training and 10% for testing and validation. The method for selecting the 10% will be discussed separately...
