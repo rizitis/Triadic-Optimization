@@ -10,7 +10,7 @@ In machine learning, understanding the relationship between the predictions of a
 
 Consider the following mathematical expression:
 
-![]()
+![triadic-rules](https://github.com/rizitis/Triadic-Optimization/blob/main/triadic-rules.png)
 
 
 This equation represents the average of an infinite number of data points \( y_i \), denoted by \( \mu \). Here, \( n \) represents the number of data points, and \( y_i \) represents each individual data point.
@@ -19,7 +19,7 @@ This equation represents the average of an infinite number of data points \( y_i
 
 Interestingly, this concept can be linked to the predictions made by a machine learning model. If a model is trained to predict values based on certain features \( x_1, x_2, ..., x_m \), it can be represented as:
 
-![]()
+![predict](https://github.com/rizitis/Triadic-Optimization/blob/main/model-predict.png)
 
 
 In this equation, \( y \) represents the predicted value, \( w_0 \) is the bias term, and \( w_1, w_2, ..., w_m \) are the weights corresponding to the features \( x_1, x_2, ..., x_m \).
