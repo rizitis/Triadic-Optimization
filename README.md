@@ -31,3 +31,5 @@ Now, let's connect the average concept with the model predictions. If a model is
 By understanding this relationship, we can gain insights into how well a model captures the underlying patterns in the data. If the model's predictions deviate significantly from the average of the data, it may indicate issues with the model's performance or the need for further investigation into the data.
 
 In conclusion, exploring the relationship between the average of the data and the predictions made by a model can provide valuable insights into the effectiveness and reliability of the model in capturing the underlying data distribution.
+
+<br>*READ: explain.txt and praxis.txt*
