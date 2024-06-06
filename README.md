@@ -33,3 +33,81 @@ By understanding this relationship, we can gain insights into how well a model c
 In conclusion, exploring the relationship between the average of the data and the predictions made by a model can provide valuable insights into the effectiveness and reliability of the model in capturing the underlying data distribution.
 
 <br>*READ: explain.txt and praxis.txt*
+
+## WHY?
+
+### Preference for the Representative Sample (1/3 of the data)
+
+#### Advantages:
+
+**Economy of Computational Resources:**
+- Less usage of processing power and memory.
+- Lower cost in terms of time and energy for training the model.
+
+**Faster Training:**
+- Training can be completed in significantly less time, allowing for quicker development and testing of models.
+
+**Easier Data Management:**
+- Smaller data volume means easier storage and management.
+- Reduced complexity in the data cleaning and preprocessing process.
+
+**Efficiency and Effectiveness:**
+- If the deviation in the result is small, nearly the same results are achieved with fewer resources.
+- Avoids overfitting that can occur with excessive use of data.
+
+#### Disadvantages:
+
+**Potential Insufficiency in Covering Rare Cases:**
+- Although the sample is representative, it may not include all rare cases or anomalies present in the full dataset.
+
+**Need for Sample Reliability:**
+- High accuracy and diligence are required in selecting the representative sample to ensure it is truly representative.
+
+### Conclusion
+
+If the representative sample provides results with small deviation from those that would be achieved with a larger amount of data, the use of the representative sample is preferred. The savings in resources, faster training, and easier data management outweigh the minor potential disadvantages.
+
+However, it must always be ensured that the sample is truly representative and that no significant information or rare cases that could affect the model's performance in a production environment are omitted.
+
+
+### Computational Resources
+
+**Training Time:**
+- Reducing the data to 1/3 can decrease the training time by approximately 1/3 to 1/2, depending on the efficiency of the processing infrastructure and the complexity of the model.
+
+**Processing Power:**
+- Fewer data require less processing power, allowing the use of fewer processors or less powerful processors for model training.
+
+**Memory (RAM):**
+- Using less data reduces the required memory during training, allowing the use of systems with smaller memory.
+
+### Storage Resources
+
+**Storage Space:**
+- Storing 1/3 of the data requires about 1/3 of the storage space that would be required for 70-80% of the data. This saves space on hard drives or data warehouses.
+
+### Energy Resources
+
+**Energy Consumption:**
+- Reducing processing power and training time leads to a significant reduction in energy consumption, which is particularly important for environmental reasons and operational costs.
+
+### Human Resources
+
+**Development Time:**
+- Faster training allows engineers and data scientists to iterate more quickly through training and optimization cycles of the model.
+
+**Data Analysis and Management:**
+- Smaller data volume makes the data cleaning, analysis, and preparation process easier, reducing the time spent by the data team.
+
+### Financial Resources
+
+**Infrastructure Cost:**
+- Less data and shorter training time reduce infrastructure costs, such as the need for more or more powerful servers and the consumption of cloud resources.
+
+**Operational Cost:**
+- Reduced energy consumption and shorter training time result in lower operational costs.
+
+### Overall Efficiency
+
+Using a highly accurate representative sample can improve efficiency in many areas, offering resource savings and faster development without significant loss of model accuracy. Especially if the deviation in model performance is small, the benefits of resource savings can outweigh the potential drawbacks.
+
