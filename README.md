@@ -107,6 +107,11 @@ However, it must always be ensured that the sample is truly representative and t
 **Operational Cost:**
 - Reduced energy consumption and shorter training time result in lower operational costs.
 
+
+![](https://github.com/rizitis/Triadic-Optimization/blob/main/1.png?raw=true)
+![](https://github.com/rizitis/Triadic-Optimization/blob/main/2.png?raw=true)
+![](https://github.com/rizitis/Triadic-Optimization/blob/main/3.png?raw=true)
+
 ### Overall Efficiency
 
 Using a highly accurate representative sample can improve efficiency in many areas, offering resource savings and faster development without significant loss of model accuracy. Especially if the deviation in model performance is small, the benefits of resource savings can outweigh the potential drawbacks.
