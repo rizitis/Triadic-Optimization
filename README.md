@@ -110,7 +110,7 @@ However, it must always be ensured that the sample is truly representative and t
 
 ![](https://github.com/rizitis/Triadic-Optimization/blob/main/1.png?raw=true)
 ![](https://github.com/rizitis/Triadic-Optimization/blob/main/2.png?raw=true)
-![](https://github.com/rizitis/Triadic-Optimization/blob/main/3.png?raw=true)
+![](https://github.com/rizitis/Triadic-Optimization/blob/main/3a.png?raw=true)
 
 ### Overall Efficiency
 
