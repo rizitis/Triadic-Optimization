@@ -5,7 +5,7 @@ Assume you want to use it for train an ai to speak ancient greeks but also speak
 This file has 82440 lines. 
 
 Step1. 
-python3 make3.python3
+python3 make3.py
 
 Step2.
 rename 2.txt to dataset.txt (27480 lines)
@@ -14,7 +14,7 @@ Step3.
 Merge 1.txt and 2.txt --> merged.txt
 
 Step4
-python3 merged5.python3
+python3 merged5.py
 
 output:(python3.11 merged5.py 
 Data has been split randomly into val_data.txt (5496 lines) and test_data.txt (5496 lines).)
