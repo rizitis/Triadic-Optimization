@@ -1,0 +1,132 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{fontspec}
+\usepackage{xltxtra}
+\usepackage{xgreek}
+\usepackage{xunicode}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{graphicx}
+%\lstset{
+%    language=Python,
+%    basicstyle=\ttfamily\small,
+%    keywordstyle=\color{blue},
+%    stringstyle=\color{red},
+%    commentstyle=\color{gray},
+%    frame=single,
+%    numbers=left,
+%    numberstyle=\tiny,
+%    stepnumber=1,
+%    numbersep=5pt
+%}
+\title{Triadic-Optimization}
+\author{Ioannis Anagnostakis \\
+rizitis@gmail.com}
+
+\date{Jun 5, 2024} 
+\setmainfont{DejaVu Sans}
+
+\begin{document}
+\maketitle
+\section{Introduction (Εισαγωγή)}
+We execute the \texttt{createnums.py} script, which generates a file named \texttt{numbers.txt} in the current directory. This file contains one billion lines, each containing a number in the range $[1,1,000,000,000]$.
+
+Εκτελούμε το script \texttt{createnums.py}, το οποίο δημιουργεί ένα αρχείο \texttt{numbers.txt} στον τρέχοντα κατάλογο. Αυτό το αρχείο περιέχει ένα δισεκατομμύριο γραμμές, κάθε μία με έναν αριθμό από το $[1,1,000,000,000]$.
+
+\section{Processing Steps (Βήματα Επεξεργασίας)}
+Next, we run either \texttt{teliko\_nums.py} or \texttt{teliko\_nums2.py}. These scripts perform the following operations:
+
+Στη συνέχεια, εκτελούμε είτε το \texttt{teliko\_nums.py} είτε το \texttt{teliko\_nums2.py}. Αυτά τα scripts εκτελούν τις ακόλουθες διαδικασίες:
+
+\begin{enumerate}
+    \item Randomly shuffle the lines in \texttt{numbers.txt}. (Ανακατεύουν τυχαία τις γραμμές στο \texttt{numbers.txt}).
+    \item Count the total number of lines ($10^9$). (Μετρούν το συνολικό αριθμό γραμμών $10^9$).
+    \item Randomly divide the lines into three segments. (Διαχωρίζουν τυχαία τις γραμμές σε τρία τμήματα).
+    \item Compute the mean for each segment: (Υπολογίζουν τον μέσο όρο για κάθε τμήμα:)
+    \begin{equation}
+        \mu_i = \frac{\sum_{j=1}^{N_i} x_j}{N_i},
+    \end{equation}
+    where $N_i$ is the number of lines in segment $i$ and $x_j$ is the number in line $j$. (όπου $N_i$ είναι ο αριθμός γραμμών στο τμήμα $i$ και $x_j$ είναι ο αριθμός στη γραμμή $j$).
+\end{enumerate}
+
+\section{Results (Αποτελέσματα)}
+The resulting means exhibit small variations:
+
+Οι προκύπτοντες μέσοι όροι εμφανίζουν μικρές αποκλίσεις:
+
+\begin{verbatim}
+python3 teliko_nums.py
+The mean of the first segment is: 499985344.58548886
+The mean of the second segment is: 499997023.58038485
+The mean of the third segment is: 500017633.33407336
+\end{verbatim}
+
+or (ή)
+
+\begin{verbatim}
+python3 teliko_nums2.py
+The mean of the first segment is: 499981295.966643
+The mean of the second segment is: 500010723.68831867
+The mean of the third segment is: 500007981.8450144
+\end{verbatim}
+
+\section{Conclusion (Συμπέρασμα)}
+At such large scales, randomness ensures the accuracy of the mean. This is significant because:
+
+Σε τέτοιες μεγάλες κλίμακες, η τυχαιότητα εξασφαλίζει την ακρίβεια του μέσου όρου. Αυτό είναι σημαντικό επειδή:
+
+\begin{itemize}
+    \item A correct mean indicates a representative sample from the dataset. (Ένας σωστός μέσος όρος δείχνει ένα αντιπροσωπευτικό δείγμα από το dataset).
+    \item The dataset, originally one billion numbers, could instead be a collection of files (e.g., text files, images, etc.). (Το dataset, αρχικά ένα δισεκατομμύριο αριθμοί, θα μπορούσε να είναι μια συλλογή αρχείων όπως κείμενα, εικόνες κ.λπ.).
+    \item Using this method, we can train a model with only $\frac{1}{3}$ of the dataset and allocate less than $10\%$ for testing and validation. (Με αυτή τη μέθοδο, μπορούμε να εκπαιδεύσουμε ένα μοντέλο με μόνο το $\frac{1}{3}$ του dataset και να διαθέσουμε λιγότερο από $10\%$ για δοκιμή και επικύρωση).
+\end{itemize}
+
+The methodology for selecting the $10\%$ subset will be discussed separately. (Η μεθοδολογία για την επιλογή του $10\%$ συνόλου θα συζητηθεί ξεχωριστά.)
+{}
+\section{Summary - Final Stage (Σύνοψη - Τελικό Στάδιο)}
+We execute the \texttt{createnums.py} script, which generates a file named \texttt{numbers.txt} in the current directory. This file contains one billion lines, each containing a number in the range $[1,1,000,000,000]$.
+
+Εκτελούμε το script \texttt{createnums.py}, το οποίο δημιουργεί ένα αρχείο \texttt{numbers.txt} στον τρέχοντα κατάλογο. Αυτό το αρχείο περιέχει ένα δισεκατομμύριο γραμμές, κάθε μία με έναν αριθμό από το $[1,1,000,000,000]$.
+
+\section{Processing Steps (Βήματα Επεξεργασίας)}
+Next, we run either \texttt{teliko\_nums.py} or \texttt{teliko\_nums2.py}. These scripts perform the following operations:
+
+Στη συνέχεια, εκτελούμε είτε το \texttt{teliko\_nums.py} είτε το \texttt{teliko\_nums2.py}. Αυτά τα scripts εκτελούν τις ακόλουθες διαδικασίες:
+
+\begin{enumerate}
+    \item Randomly shuffle the lines in \texttt{numbers.txt}. (Ανακατεύουν τυχαία τις γραμμές στο \texttt{numbers.txt}).
+    \item Count the total number of lines ($10^9$). (Μετρούν το συνολικό αριθμό γραμμών $10^9$).
+    \item Randomly divide the lines into three segments. (Διαχωρίζουν τυχαία τις γραμμές σε τρία τμήματα).
+    \item Compute the mean for each segment: (Υπολογίζουν τον μέσο όρο για κάθε τμήμα:)
+    \begin{equation}
+        \mu_i = \frac{\sum_{j=1}^{N_i} x_j}{N_i},
+    \end{equation}
+    where $N_i$ is the number of lines in segment $i$ and $x_j$ is the number in line $j$. (όπου $N_i$ είναι ο αριθμός γραμμών στο τμήμα $i$ και $x_j$ είναι ο αριθμός στη γραμμή $j$).
+\end{enumerate}
+{}
+\section{Dataset Processing (Επεξεργασία Συνόλου Δεδομένων)}
+Let's move on to practice now. (Καλή η θεωρεία, ας περάσουμε στην πράξη τώρα.)
+
+Assume that the \texttt{all\_data} folder represents the dataset with all the files we want to use to train the model. (Ας υποθέσουμε ότι ο φάκελος \texttt{all\_data} είναι το dataset με όλα τα αρχεία που θέλουμε να εκπαιδεύσουμε το μοντέλο.)
+
+Running \texttt{step-4teliko\_arheia.py} will perform the following: (Εκτελώντας το \texttt{step-4teliko\_arheia.py} θα γίνουν τα παρακάτω:)
+
+\begin{enumerate}
+    \item Read the names of the files from the \texttt{all\_data} folder. (Ανάγνωση των ονομάτων των αρχείων από τον φάκελο \texttt{all\_data})
+    \item Randomly shuffle the files. (Τυχαία ανάκατεμα των αρχείων)
+    \item Calculate the total number of files. (Υπολογισμός του συνολικού αριθμού αρχείων)
+    \item Calculate the size of each segment (33\%). (Υπολογισμός του μεγέθους κάθε τμήματος (33\%))
+    \item Create folders for the 3 segments. (Δημιουργία φακέλων για τα 3 τμήματα)
+    \item Separate the files and move them to the respective folders. (Διαχωρισμός των αρχείων και μεταφορά στους αντίστοιχους φακέλους.)
+\end{enumerate}
+
+Next, we run \texttt{step-5create\_test.py}, where the following actions take place: (Στη συνέχεια τρέχουμε το \texttt{step-5create\_test.py}, όπου εκεί θα γίνουν τα παρακάτω:)
+
+\begin{enumerate}
+    \item Create the folders \texttt{merged}, \texttt{test\_data}, and \texttt{val\_data}. (Θα δημιουργηθούν οι φάκελοι \texttt{merged}, \texttt{test\_data} και \texttt{val\_data})
+    \item Merge the \texttt{data1} and \texttt{data3} folders into one folder named \texttt{merged}. (Οι φάκελοι \texttt{data1} και \texttt{data3} θα συγχωνευτούν σε ένα φάκελο \texttt{merged}.)
+    \item Count the files in the \texttt{merged} folder and randomly select one fifth for testing and another one fifth for validation. (Μετράμε τα αρχεία στον φάκελο \texttt{merged} και τυχαία διαλέγουμε το 1/5 για τεστ και άλλο 1/5 για επικύρωση.)
+\end{enumerate}
+
+Now, we can train our model and evaluate if the \textbf{Triadic Optimization} approach is effective! (Αυτό ήταν! Μπορούμε τώρα να δοκιμάσουμε να εκπαιδεύσουμε το μοντέλο μας και να αξιολογήσουμε αν η \textbf{Triadic Optimization} αξίζει τον κόπο!)
+\end{document}

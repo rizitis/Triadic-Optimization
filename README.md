@@ -32,7 +32,7 @@ By understanding this relationship, we can gain insights into how well a model c
 
 In conclusion, exploring the relationship between the average of the data and the predictions made by a model can provide valuable insights into the effectiveness and reliability of the model in capturing the underlying data distribution.
 
-<br>*READ: explain.txt and praxis.txt*
+<br>*READ: Proof-theory.pdf*
 
 ## WHY?
 
